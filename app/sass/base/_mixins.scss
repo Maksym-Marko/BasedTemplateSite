@@ -1,0 +1,51 @@
+@mixin linear-gradient($deg, $colors, $col2, $col3, $col4){
+	background: linear-gradient($deg, $col1, $col2, $col3, $col4);
+	background: -webkit-linear-gradient($deg, $col1, $col2, $col3, $col4);	
+	background: -moz-linear-gradient($deg, $col1, $col2, $col3, $col4);	
+	background: -o-linear-gradient($deg, $col1, $col2, $col3, $col4);	
+	background: -ms-linear-gradient($deg, $col1, $col2, $col3, $col4);	
+}
+
+@mixin transform($rotate){
+	-moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -webkit-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+@mixin box-sizing{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;    
+    -webkit-box-sizing: border-box;
+}
+
+@mixin border-radius($num){
+	border-radius: $num;
+	-moz-border-radius: $num;
+	-webkit-border-radius: $num;
+	-ms-border-radius: $num;
+	-o-border-radius: $num;
+}
+
+@mixin transition($tr){
+	transition: $tr;
+	transition-duration: $tr;
+	-webkit-transition-duration: $tr;
+	-o-transition-duration: $tr;
+	-moz-transition-duration: $tr;
+}
+
+@mixin box-sdadow($n1, $n2, $n3, $n4, $opac){
+	box-shadow: $n1 $n2 $n3 $n4 rgba(0,0,0,$opac);
+	-moz-box-shadow: $n1 $n2 $n3 $n4 rgba(0,0,0,$opac);
+	-webkit-box-shadow: $n1 $n2 $n3 $n4 rgba(0,0,0,$opac);
+}
+
+@mixin linear-gradient($vector, $color1, $color2){
+	background: -moz-linear-gradient($vector, $color1, $color2);
+    background: -webkit-linear-gradient($vector, $color1, $color2);
+    background: -o-linear-gradient($vector, $color1, $color2);
+    background: -ms-linear-gradient($vector, $color1, $color2);
+    background: linear-gradient($vector, $color1, $color2);
+}

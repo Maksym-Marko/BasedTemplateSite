@@ -1,0 +1,91 @@
+body{
+	font-family: "playfair-display";
+	color: #fff;
+	font-size: 16px;
+	background-color: #333;
+}
+a{
+	text-decoration: none;
+	color: #192b74;
+}
+h1, h2, h3, h4, h5{
+	margin: 0px;
+	padding: 0px;
+}
+
+/* centering blocks */
+.conteiner-horisontal{
+	padding: 0px;
+	width: 100%;
+	position: relative;	
+	float: left;
+	display: block;
+}
+.conteiner-center{
+	width: 100%;
+	max-width: 1170px;
+	margin: 0px auto;
+	position: relative;
+	padding: 0px;
+	@include box-sizing;
+}
+
+/* Lists */
+ul{
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	& li{
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+/* form */
+::-webkit-input-placeholder{
+	font-family: "playfair-display";
+	color: #999999;
+	font-weight: 300;
+	font-size: 14px;
+	@media only screen and (max-width: 992px){
+		font-size: 12px;
+	}
+}
+::-moz-placeholder{
+	font-family: "playfair-display";
+	color: #999999;
+	font-weight: 300;
+	font-size: 14px;
+	@media only screen and (max-width: 992px){
+		font-size: 12px;
+	}
+}
+:-ms-input-placeholder{
+	font-family: "playfair-display";
+	color: #999999;
+	font-weight: 300;
+	font-size: 14px;
+	@media only screen and (max-width: 992px){
+		font-size: 12px;
+	}
+}
+:-o-input-placeholder{
+	font-family: "playfair-display";
+	color: #999999;
+	font-weight: 300;
+	font-size: 14px;
+	@media only screen and (max-width: 992px){
+		font-size: 12px;
+	}
+}
+
+/* bootstrap custom */
+.row{
+	padding: 0px;
+	margin: 0px;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
+	padding: 0px;
+	margin: 0px;
+}
