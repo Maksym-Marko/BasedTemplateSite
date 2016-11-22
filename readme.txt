@@ -1,12 +1,12 @@
-Базовый шаблон для верстки страниц сайта.
+Р‘Р°Р·РѕРІС‹Р№ С€Р°Р±Р»РѕРЅ РґР»СЏ РІРµСЂСЃС‚РєРё СЃС‚СЂР°РЅРёС† СЃР°Р№С‚Р°.
 
-Используются препроцессоры Jade и SASS.
+РСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РїСЂРµРїСЂРѕС†РµСЃСЃРѕСЂС‹ Jade Рё SASS.
 
-Для работы с шаблоном необходимо предварительно установить npm (пакетный менеджер node.js).
-Сборка инструментов - gulp.
+Р”Р»СЏ СЂР°Р±РѕС‚С‹ СЃ С€Р°Р±Р»РѕРЅРѕРј РЅРµРѕР±С…РѕРґРёРјРѕ РїСЂРµРґРІР°СЂРёС‚РµР»СЊРЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ npm (РїР°РєРµС‚РЅС‹Р№ РјРµРЅРµРґР¶РµСЂ node.js).
+РЎР±РѕСЂРєР° РёРЅСЃС‚СЂСѓРјРµРЅС‚РѕРІ - gulp.
 
 
-		Install BrowserSynс, Sass, Jade, Plumber
+		Install BrowserSynСЃ, Sass, Jade, Plumber
 
 npm install --save-dev gulp gulp-jade gulp-sass gulp-plumber browser-sync
 
@@ -14,7 +14,7 @@ npm install --save-dev gulp gulp-jade gulp-sass gulp-plumber browser-sync
 gulp:
  - npm install --save-dev gulp
 
-BrowserSynс:
+BrowserSynСЃ:
  - npm install browser-sync gulp --save-dev
 
 jade:
