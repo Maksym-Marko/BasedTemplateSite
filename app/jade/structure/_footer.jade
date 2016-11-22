@@ -1,10 +1,30 @@
 footer
-	script(type="text/javascript" src="js/jquery-1.11.3.js")
 
-	<!--[if gt IE 7]>	
-	script(type="text/javascript" src="add/placeholder_ie.js") 
-	script(type="text/javascript" src="add/respond.min.js")  
-	<![endif]-->
+script(type="text/javascript" src="js/jquery-1.11.3.js")
 
-	//common
-	script(type="text/javascript" src="js/common.js")
+<!--[if gt IE 7]>	
+script(type="text/javascript" src="add/placeholder_ie.js") 
+script(type="text/javascript" src="add/respond.min.js")  
+<![endif]-->
+
+//common
+script(type="text/javascript" src="js/common.js")
+
+// popup
+button(class='mx-button_popup_open') Всплывающее окно
+.mx-popup_wrap
+  .mx-org_info_wrap
+    img(src="img/close_form.png" alt="" id="MxClose")
+    h2 Название popup-окна
+    h3 Описание popup-окна или второе по важности название
+    p
+      <span>Спан в параграфе:</span> Текст параграфа
+    p
+      <span>Спан в параграфе:</span> Текст параграфа
+    p
+      <span>Спан в параграфе:</span> Текст параграфа
+    p
+      <span>Спан в параграфе:</span> Текст параграфа <a href="#">www.link.com</a>
+// popup
+
+

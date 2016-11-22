@@ -1,4 +1,24 @@
 
 /* =======================
 *         footer
- ======================= */
+======================= */
+
+/* Custom popup windows */
+.mx-org_info_wrap{
+  width: 860px;
+  height: 400px;
+  margin-left: -430px;
+  margin-top: -196px;
+}
+a.mx-send_link{
+  font-family: 'playfair-display';
+  display: table;
+  padding-left: 22px;
+  color: #dd8a32;
+  float: right;
+  font-size: 17px;
+  margin-right: 132px;
+  background-image: url(../img/send.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
