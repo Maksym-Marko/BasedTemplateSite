@@ -2,3 +2,168 @@
 /* =======================
 *          header
 ======================= */
+
+/* Menu */
+.mx-nav_line{
+  top: 0px;
+  display: table;
+  width: 100%;
+  color: #333;
+  z-index: 998;
+  background: #1d1001;
+  border-bottom: 1px solid #ddd;
+}
+.mx-logo{
+  display: table;
+  float: left;
+  padding: 14px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #1d1001;
+}
+.mx-logo a{
+  display: table;
+  float: left;
+}
+.mx-nav_wrap{
+
+}
+ul.mx-nav{
+  position: relative;
+  display: table;
+  float: right;
+  margin-right: 10px;
+}
+ul.mx-nav li{
+  float: left;
+}
+ul.mx-nav li a{
+  padding: 32px 10px;
+  display: block;
+  color: #939090;
+  font-size: 17px;
+}
+ul.mx-nav li a:hover{
+  color: #fff;
+}
+ul.mx-nav li.mx-nav_actie a{
+  color: #fff;
+}
+.mx-button_small{
+  position: relative;
+  display: none;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 0px;
+  margin-right: 30px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+.mx-button_small:hover{
+  background-color: #ddd;
+  cursor: pointer;
+  outline: none;
+}
+.mx-button_icon{
+  background-color: #888;
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -o-border-radius: 1px;
+  margin: 3px 0px;
+}
+
+.mx-navbar-brand{
+  display: block;
+  width: 159px;
+}
+.mx-navbar-brand img{
+  width: 100%;
+}
+
+.mx-grid_4_menu{
+	margin-bottom: 40px;
+}
+.mx-name_food{
+    font-family: 'Merriweather-UltraBold';
+    color: #fff;
+}
+
+/* Sub menu */
+ul.mx-nav{
+  position: relative;
+}
+ul.mx-nav > li > ul{
+  position: absolute;
+  display: none;
+  top: 80px;
+  left: 60px;
+  background-color: #1d1001;
+  border-bottom: 1px solid #ddd;
+}
+ul.mx-nav > li > ul > li{
+  float: none;
+}
+ul.mx-nav > li > ul > li a{
+  padding: 10px 20px;
+}
+ul.mx-nav > li:hover ul{
+  display: block;
+}
+
+@media only screen and (max-width: 767px){
+  .mx-nav_line{
+    background: transparent;
+    border: none;
+  }
+  ul.mx-nav{
+    float: left;
+    padding-left: 10px;
+    display: block;
+    width: 100%;
+    background: #1d1001;
+    overflow: hidden;
+  }
+  .mx-logo{
+    width: 100%;
+    padding: 16px;
+    padding-top: 6px;
+  }
+  .mx-button_small{
+    display: block;
+    margin-top: 12px;
+  }
+  ul.mx-nav li{
+    float: none;
+  }
+  ul.mx-nav li a {
+    padding: 7px 10px;
+  }
+  .mx-logo {
+    border-bottom: 1px solid #ddd;
+  }
+  .mx-logo a {
+    margin-top: 8px;
+  }
+  ul.mx-nav > li > ul {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  ul.mx-nav > li > ul > li{
+    float: left;
+  }
+  ul.mx-nav > li > ul > li a {
+    padding: 18px 25px;
+  }
+  ul.mx-nav > li:hover ul{
+    display: none;
+  }
+}

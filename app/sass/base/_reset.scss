@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5{
   	@include box-sizing;
   }
 
-  /* not adaptive site */
+  /* not adaptive site
   .container-horizontal{
     padding: 0px;
     width: 100%;
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5{
     position: relative; 
     float: left;
     display: block;
-  }
+  } */
 
 /* Lists */
 ul{
@@ -99,48 +99,6 @@ ul{
 	padding: 0px;
 	margin: 0px;
 }
-
-/* Menu */
-.mx-headmenu {
-  height: 95px;
-  background-color: #dd8a32; }
-
-.mx-headmenu ul {
-  margin-left: 50px; }
-
-.mx-headmenu ul li {
-  float: left; }
-
-.mx-headmenu ul li a {
-  position: relative;
-  display: block;
-  font-family: 'playfair-display';
-  font-size: 19px;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 35px 32px; }
-
-.mx-headmenu ul li a span {
-  position: absolute;
-  display: none;
-  width: 100%;
-  top: 1px;
-  left: 0px;
-  border-top: 5px solid #f0d3b4; }
-
-.mx-headmenu ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #000; }
-
-.mx-headmenu ul li a:hover span {
-  display: block; }
-
-.mx-headmenu ul li.mx-active_nav a {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #000; }
-
-.mx-headmenu ul li.mx-active_nav a span {
-  display: block; }
 
 /* Popup windows */
 .mx-popup_wrap{
