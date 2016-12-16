@@ -1,106 +1,130 @@
 $(document).ready(function(){
 
-	// Login window
-	$( '#MxClose' ).css( 'cursor', 'pointer' );
-	$( '.mx-button_popup_open' ).css( 'cursor', 'pointer' );
+  // Login window
+  $( '#MxClose' ).css( 'cursor', 'pointer' );
+  $( '.mx-button_popup_open' ).css( 'cursor', 'pointer' );
 
-	$( '.mx-button_popup_open' ).on( 'click', function(){           
-		$( '.mx-popup_wrap' ).css( 'display', 'block' );
-		$( 'body' ).css( 'overflow', 'hidden' );                  
-	} );
+  $( '.mx-button_popup_open' ).on( 'click', function(){           
+    $( '.mx-popup_wrap' ).css( 'display', 'block' );
+    $( 'body' ).css( 'overflow', 'hidden' );                  
+  } );
 
-	$( '#MxClose' ).on( 'click', function(){
-		$( '.mx-popup_wrap' ).css( 'display', 'none' );
-		$( 'body' ).css( 'overflow', 'auto' );
-	});
+  $( '#MxClose' ).on( 'click', function(){
+    $( '.mx-popup_wrap' ).css( 'display', 'none' );
+    $( 'body' ).css( 'overflow', 'auto' );
+  });
 
-	// Menu
-	var windowWidth = $( window ).width(),
+  // Menu
+  var windowWidth;
+  function GetWidthWithoutScrollbar(){
+    $( 'body' ).css( 'overflow', 'hidden' );
+    windowWidth = $( 'body' ).width();
+    $( 'body' ).css( 'overflow', 'auto' );
+  } 
+
+    var navKey = false,
         subMenuKey = false;
 
-    $( 'ul.mx-nav > li' ).each( function(){
+    $( '.mx-button_small' ).on( 'click', function(){
+    
+    if( navKey == false ){
+        $( 'ul.mx-nav' ).css( 'display', 'block' );
+        navKey = true;
+    } else{
+        $( 'ul.mx-nav' ).css( 'display', 'none' );
+        navKey = false;
+        $( 'ul.mx-nav' ).children( 'li' ).children( 'ul' ).attr( 'style', '' );
+        subMenuKey = false;
+    }
+    } ); 
+
+    function MainMenu(){
+    
+      $( 'ul.mx-nav > li' ).css( 'position', 'relative' );
+    $( 'ul.mx-nav' ).attr( 'style', '' );
+
+      $( 'ul.mx-nav > li' ).each( function(){
+          if( $( this ).children( 'ul' ).length ){
+              $( this ).children( 'a:first-child' ).attr( 'onclick', 'return false' );
+          }
+      } );
+
+      if( windowWidth <= 768 ){
+        $( 'ul.mx-nav > li' ).attr( 'style', '' );
+      $( 'ul.mx-nav' ).css( 'display', 'none' );
+    }
+    }
+
+    $( 'ul.mx-nav' ).children( 'li' ).each( function(){
+
         if( $( this ).children( 'ul' ).length ){
-            $( this ).children( 'a:first-child' ).attr( 'onclick', 'return false' );
+            $( this ).on( 'click', function(){
+          
+            if( subMenuKey == false ){
+              $( 'ul.mx-nav > li ul' ).attr( 'style', '' );
+                $( this ).children( 'ul' ).css( 'display', 'block' );
+                subMenuKey = true;
+            } else{
+              $( 'ul.mx-nav > li ul' ).attr( 'style', '' );
+                subMenuKey = false;
+            }         
+        });
         }
     } );
-
-    function SmallMenu(){
-
-        windowWidth = $( window ).width();
+    
+    function SubMenu(){
 
         // sub menu        
-        if( windowWidth < 767 ){
-            
-            $( 'ul.mx-nav > li' ).each( function(){
-                if( $( this ).children( 'ul' ).length ){
-                    $( this ).on( 'click', function(){
-                        if( subMenuKey == false ){
-                           $( this ).children( 'ul' ).css( 'display', 'block' );
-                            subMenuKey = true;
-                        }                        
-                    } );
-                }
-            } );
-
-            $( window ).scroll( function(){
-                if( subMenuKey == true ){
-                   $( 'ul.mx-nav > li > ul' ).css( 'display', 'none' );
-                    subMenuKey = false;
-                }
-            } );
+        if( windowWidth <= 768 ){            
 
             $( '.mx-button_small' ).on( 'click', function(){
                 if( subMenuKey == true ){
                    $( 'ul.mx-nav > li > ul' ).css( 'display', 'none' );
-                    subMenuKey = false;
+                   subMenuKey = false;
                 }
             } );
+        } else{
+          $( 'ul.mx-nav > li > ul' ).attr( 'style', '' );
         }
         
-    }
-
-    var navH = $( 'ul.mx-nav' ).height(),
-        navKey = false;
-    $( 'ul.mx-nav' ).css( 'height', '0px' );
-
-    $( '.mx-button_small' ).on( 'click', function(){
-       if( navKey == false ){
-            $( 'ul.mx-nav' ).css( 'height', navH + 'px' );
-            navKey = true;
-       } else{
-            $( 'ul.mx-nav' ).css( 'height', '0px' );
-            navKey = false;
-       }
-    } );
+    } 
 
     $( window ).scroll( function(){
-		if( navKey == true ){			
-			$( 'ul.mx-nav' ).css( 'height', '0px' );
+
+    if( navKey == true ){     
+      $( 'ul.mx-nav' ).css( 'display', 'none' );
             navKey = false;
-		}
-	} );    
-    
-    SmallMenu();
+    }
 
-	$( window ).resize( function(){       
-
-		if( navKey == true ){			
-			$( 'ul.mx-nav' ).css( 'height', '0px' );
-            navKey = false;
-		}        
-
-       $( 'ul.mx-nav' ).attr( 'style', '' );
-       navH = $( 'ul.mx-nav' ).height();
-       navKey = false;
-       $( 'ul.mx-nav' ).css( 'height', '0px' );
-
-       if( subMenuKey == true ){
-           $( 'ul.mx-nav > li > ul' ).css( 'display', 'none' );
+    if( subMenuKey == true ){
+           $( 'ul.mx-nav > li > ul' ).attr( 'style', '' );
             subMenuKey = false;
         }
 
-       SmallMenu();
+  } );
+    
+    GetWidthWithoutScrollbar();
+    MainMenu();
+    SubMenu();
 
-	} );
-	
+  $( window ).resize( function(){
+
+    $( 'ul.mx-nav' ).attr( 'style', '' );
+
+    if( navKey == true ){     
+      $( 'ul.mx-nav' ).css( 'display', 'none' );
+            navKey = false;
+    }
+
+       if( subMenuKey == true ){
+           $( 'ul.mx-nav > li > ul' ).css( 'display', 'none' );
+           subMenuKey = false;
+        }
+
+    GetWidthWithoutScrollbar();
+    MainMenu();
+    SubMenu();
+
+  } );
+  
 });
